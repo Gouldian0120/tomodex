@@ -13,7 +13,7 @@ Using `mm-bot` binary
 ```
 wget https://github.com/tomochain/mm-bot/releases/download/${MM_BOT_VERSION}/mm-bot.${MM_BOT_VERSION}.linux-x64 \
     && chmod +x mm-bot.${MM_BOT_VERSION}.linux-x64 \
-    && mv mm-bot.${MM_BOT_VERSION}.linux-x64 /usr/bin/mm-bot
+    && mv mm-bot.${MM_BOT_VERSION}.linux-x64 /usr/bin/mm-bot \
 ```
 
 ## Usage
@@ -78,10 +78,13 @@ QUOTE_ERC20_DECIMAL= // decimal of quoteToken on Ethereum network
 INFURA_API_KEY= // to retrieve price from uniswap
 ```
 
-**Run as a service with `pm2`**
+## Price Provider
 ```
-pm2 start --name MMBOT mm-bot -- start
-```
+'pool', // auto-adjust pricing by state of the pool (balance of the tokens in the main wallet)
+'coingecko',  // get price from coingecko
+'binance', // get price from binance
+'ftx', // get price from ftx
+'uniswap' // get price from uniswap
 
 ## Contribution
 Feel free to create an issue or PR
